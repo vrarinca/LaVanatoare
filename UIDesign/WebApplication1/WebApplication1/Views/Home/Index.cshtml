@@ -1,0 +1,41 @@
+﻿<div class="flex-container">
+   <div class="hunting-info">
+
+   </div>
+
+   <div class=" login-area" >
+    <div class="login-card">
+        <div class="col s12 z-depth-6 card-panel">
+            <form class="login-form" method="post" action="/login">
+            <div class="row">
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                <i class="material-icons prefix">mail_outline</i>
+                <input class="validate" id="user_email" name="user_email" type="email">
+                <label for="email" data-error="wrong" data-success="right">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                <i class="material-icons prefix">lock_outline</i>
+                <input id="user_pass" name="user_pass" type="password">
+                <label for="password">Password</label>
+                </div>
+            </div>
+            <div class="row">          
+                <label id="login-checkbox">
+                    <input type="checkbox"  />
+                    <span>Remember me</span>
+                  </label>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                <a onclick="$(this).closest('form').submit()" class="btn waves-effect waves-light col s12">Login</a>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>   
+   </div>
+</div>

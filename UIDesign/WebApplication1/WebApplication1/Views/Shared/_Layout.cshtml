@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="~/lib/materialize/css/materialize.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <title>@ViewData["Title"] Management Asociații Vânători</title>
+    
+</head>
+<body>
+    <header>
+        @if(ViewBag.UserName!=null){
+        <ul id="dropdown1" class="dropdown-content">
+            
+            <li><a href="#!">Profil</a></li>
+            <li><a href="#!">Logout</a></li>
+            
+          </ul>
+        }
+          <nav>
+            <div class="nav-wrapper green darken-4">
+              
+
+              <ul class="left ">
+                <li><a href="#!"  id="logo-menu">Administratie Asociatii Vanatoare</a></li>
+                @if(ViewBag.Role=="SysAdmin"){
+                <li><a href="#">Cont1</a></li>
+                <li><a href="#">Cont2</a></li>
+                }
+                @if(ViewBag.Role=="AssocAdmin"){
+                    <li><a href="#">Cont3</a></li>
+                    <li><a href="#">Cont4</a></li>
+                    }
+                <!-- Dropdown Trigger -->
+              </ul>
+
+              <ul class="right hide-on-med-and-down">
+               
+                <!-- Dropdown Trigger -->
+                @if(ViewBag.UserName!=null){
+                    <li><a href="#">Home</a></li>
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+                }
+            </ul>
+            </div>
+          </nav>
+    </header>
+    <div >
+        <main role="main" >
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/materialize/js/materialize.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
