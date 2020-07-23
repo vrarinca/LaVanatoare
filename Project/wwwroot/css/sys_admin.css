@@ -1,0 +1,120 @@
+.nav-item:hover{
+    border-bottom: 1px solid green;
+}
+
+#admin-vanatoare{
+    border-right:1px solid black;
+    margin-right: 10px;
+}
+
+#navigation-bar{
+    height:12vh;
+    background-color:	#F5F5F5;
+    box-shadow:   0 0 10px #000000;
+   
+}
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    height:88vh;
+    box-shadow:         inset 0 0 5px #000000;
+  
+}
+.flex-container1{
+    
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.flex-container2{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+  
+}
+
+.header-hunt,.navbar{
+    height:12vh;
+    background-color: black;
+  
+}
+
+
+
+
+.user-select{
+   
+    
+    width:40%;
+
+    overflow:auto;
+
+}
+
+.user-select-window{
+    text-align: center;
+    margin: 1em;
+    margin-top:2em;
+    box-shadow: 0 0 4px #000000;
+    
+}
+
+.user-select-window-top{
+    background-color: darkgreen;
+}
+
+.user-info{
+    
+   
+    width:60%;
+}
+
+#search-bar{
+    text-align: center;
+    
+    margin: 0 auto;
+   
+    margin-left:1em;
+    
+    padding-bottom:1em;
+    
+  
+    
+}
+#search-form{
+    padding-top: 1em;
+    
+}
+
+.search-button{
+    color:white;
+    font-size: 1.1em;
+}
+
+
+.bar-button{
+    margin:5px;
+}
+.userField{
+    margin:1em;
+}
+
+.userCard{
+    
+    border-top:1px solid gray;
+    box-shadow: 5px 6px 5px 0px rgba(0,0,0,0.75);
+    
+}
+
+.page-link{
+    color:darkgreen;
+}
+.page-link:hover{
+    color:lightgreen;
+}
+
+.nav-link{
+    color:white;
+}

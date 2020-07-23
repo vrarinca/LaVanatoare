@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace Library.Data.Models
+{
+    public partial class RiflePipeType
+    {
+        public RiflePipeType()
+        {
+            Rifle = new HashSet<Rifle>();
+        }
+
+        public int Id { get; set; }
+        public string PipeType { get; set; }
+
+        public virtual ICollection<Rifle> Rifle { get; set; }
+    }
+}
