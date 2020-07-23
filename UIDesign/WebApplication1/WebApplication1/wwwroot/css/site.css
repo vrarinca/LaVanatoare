@@ -136,3 +136,16 @@ body {
   padding-top:0.3em;
   padding-bottom: 1.3em;
 }
+
+.search-field{
+  margin-left: 1em;
+  padding-left:1em;
+}
+
+.input-field >label{
+  color:black;
+}
+
+#form-management{
+  box-shadow: 0 14px 28px rgba(0,0,0,0.3), 0 10px 10px rgba(0,0,0,0.3);
+}

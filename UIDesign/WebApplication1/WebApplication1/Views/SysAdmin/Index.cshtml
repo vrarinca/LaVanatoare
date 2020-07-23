@@ -2,15 +2,15 @@
 
     <div class="col s5  management-card table-navigation">
         <div class="management-card-inner center">
-            <nav >
+            <nav class="" >
             <div class="nav-wrapper lime darken-4 s3">
             <ul class="left " id="search-nav-bar">
             <li class="search-field">
-            <div class=" lime darken-4 s3 ">
+            <div class="seach-nav lime darken-4 s3 ">
               <form>
                 <div class="input-field ">
-                  <input id="search" type="search" required>
-                  <label  for="search"><i class="material-icons">search</i></label>
+                  <input class="seach-nav" id="search" type="search" required>
+                  <label   for="search"><i class="material-icons">search</i></label>
                   <i class="material-icons">close</i>
                 </div>
               </form>
@@ -19,7 +19,7 @@
             </li>
             <li><a class="waves-effect waves-light btn green darken-4">Search</a></li>
 
-            <li><a class="waves-effect waves-light btn green darken-4">New User</a></li>
+            <li><a id="newUserBtn" onclick="newUser()" class="waves-effect waves-light btn green darken-3">New </a></li>
 
             </ul>
             </div>
@@ -28,7 +28,7 @@
 
           <table class="centered">
             <thead>
-              <tr>
+              <tr >
                   <th>Name</th>
                   <th>Item Name</th>
                   <th>Item Price</th>
@@ -36,7 +36,7 @@
             </thead>
     
             <tbody>
-              <tr>
+              <tr onclick="selectItem()">
                 <td>Alvin</td>
                 <td>Eclair</td>
                 <td>$0.87</td>
@@ -67,8 +67,8 @@
 
         </div>
     </div>
-    <div class="col s7 center management-card">
-        <div class="presentation-card card-panel">
+    <div  class="col s7 center management-card ">
+        <div id="form-management" class="presentation-card card-panel">
             <div class="user-info-body">
                 <div class="row">
                     <form class="col" id="userDetailsForm" method="post" action="/users/create_new_user">

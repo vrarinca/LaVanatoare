@@ -10,5 +10,17 @@ $(document).ready(function(){
  $(document).ready(function(){
     $('select').formSelect();
   });
+
+  function selectItem(){
+      var el =document.getElementById("newUserBtn");
+      el.classList.remove("darken-3");
+      el.classList.add("darken-4");
+  }
+
+  function newUser(){
+   var el =document.getElementById("newUserBtn");
+   el.classList.add("darken-3");
+   el.classList.remove("darken-4");
+  }
  
   
