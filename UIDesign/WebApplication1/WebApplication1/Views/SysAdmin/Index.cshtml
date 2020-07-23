@@ -1,7 +1,7 @@
-<div class="row management-area">
+<div class="row management-area ">
 
-    <div class="col s5  management-card table-navigation">
-        <div class="management-card-inner center">
+    <div class="col s5  management-card table-navigation ">
+        <div class="management-card-inner center grey lighten-3">
             <nav class="" >
             <div class="nav-wrapper lime darken-4 s3">
             <ul class="left " id="search-nav-bar">
@@ -36,7 +36,7 @@
             </thead>
     
             <tbody>
-              <tr onclick="selectItem()">
+              <tr class="object-select" onclick="selectItem()">
                 <td>Alvin</td>
                 <td>Eclair</td>
                 <td>$0.87</td>
@@ -68,19 +68,21 @@
         </div>
     </div>
     <div  class="col s7 center management-card ">
-        <div id="form-management" class="presentation-card card-panel">
-            <div class="user-info-body">
+        <div id="form-management" class="grey lighten-3 presentation-card card-panel">
+            <div class="user-info-body ">
                 <div class="row">
                     <form class="col" id="userDetailsForm" method="post" action="/users/create_new_user">
                       <div class="row">
-                        <div class="input-field col ">
+                        
+                        <div class="input-field col s6">
                           <input  id="first_name" name="user_name" type="text" class="validate">
                           <label for="first_name">Nume</label>
                         </div>
-                        <div class="input-field col">
+                        <div class="input-field col s6">
                           <input id="last_name" name="user_surname" type="text" class="validate">
                           <label for="last_name">Prenume</label>
                         </div>
+
                         
                         
                       </div>
@@ -97,39 +99,31 @@
                           <label for="email">Email</label>
                         </div>
 
-                        
-                        
-                      </div>
-
-                      <div class="row">
-                        <div class="input-field col">
-                          <input id="cnp" name="user_cnp" type="text" class="validate">
-                          <label for="cnp">CNP</label>
-                        </div>
-                        <div class="input-field col">
-                          <input id="license" name="user_license" type="text" class="validate">
-                          <label for="license">Licență</label>
-                        </div>
                         <div class="input-field col">
                           <input id="insurance" name="user_insurance" type="text" class="validate">
                           <label for="insurance">Asigurare</label>
                         </div>
+
+                       
+
+                        
+                        
                       </div>
 
                       <div class="row">
 
-                        <div class="input-field col ">
-                          
-                          <select name="function_select" class="lime darken-3">
-                            <option value="" disabled="" selected="">Selectează funcție</option>
-                            @foreach (var function in (dynamic)ViewData["Functions"]){
-                              <option value=@function.Id>@function.FunctionName</option>
-                            }
-                         </select>
-                         <label>Funcție</label>
+                        <div class="input-field col">
+                          <input id="cnp" name="user_cnp" type="text" class="validate">
+                          <label for="cnp">CNP</label>
                         </div>
 
-                        <div class="input-field col s6">
+
+                        <div class="input-field col">
+                          <input id="license" name="user_license" type="text" class="validate">
+                          <label for="license">Licență</label>
+                        </div>
+
+                        <div class="input-field col">
                           
                           <select name="assoc_select" multiple class="lime darken-3" >
                             <option value="" disabled>Select asociație</option>
@@ -139,6 +133,14 @@
                          </select>
                          <label>Asociație</label>
                         </div>
+                        
+                      </div>
+
+                      <div class="row">
+
+                        
+
+                       
 
                        
                         

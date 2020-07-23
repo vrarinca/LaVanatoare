@@ -7,6 +7,7 @@ a.navbar-brand {
   word-break: break-all;
 }
 
+
 /* Provide sufficient contrast against white background */
 a {
   color: #0366d6;
@@ -148,4 +149,8 @@ body {
 
 #form-management{
   box-shadow: 0 14px 28px rgba(0,0,0,0.3), 0 10px 10px rgba(0,0,0,0.3);
+}
+
+.object-select:hover{
+  background-color: #e0e0e0;
 }
