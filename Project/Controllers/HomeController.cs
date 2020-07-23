@@ -6,7 +6,6 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Library.Data;
 using Library.Data.Models;
-// using Library.Data.Models;
 using Library.Web.Models.Login;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -157,11 +156,16 @@ namespace Project.Controllers
                 return RedirectToAction("ErrorLoggingIn");
             }
             List<UserAssociation> associations = await _assoc.getAllUserAss(user.Id);
+
             List<string> asocNames = new List<string>();
+            List<string> asocRoles = new List<string>();
+
             foreach (UserAssociation uA in associations)
             {
                 string name = await _assoc.getAssociationNameById(uA.Id);
+                string func = await _assoc.getFunctionNameById(uA.Id);
                 asocNames.Add(name);
+                asocRoles.Add(func);
             }
 
             if (associations.Count != 1)
@@ -184,6 +188,9 @@ namespace Project.Controllers
 
                 ViewBag.AssNumber = associations.Count;
                 ViewBag.Association = asocNames;
+                ViewBag.Roles = asocRoles;
+                
+
                 return View("ChooseAss");
             }
             int role = (int)associations[0].IdRole;

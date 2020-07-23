@@ -15,6 +15,8 @@ namespace Library.Data
 
         Task<string> getAssociationNameById(int assocID);
 
+        Task<string> getFunctionNameById(int assocID);
+
         IQueryable<Association> GetAssociations();
 
         IQueryable<UserAssociation> GetUserAssociations();
