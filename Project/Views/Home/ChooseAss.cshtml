@@ -11,6 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="~/css/choose_ass.css">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,16 +19,25 @@
 </head>
 <body class="homebody">
 
-    <div>
+    <div id ="parent">
         <form id="search-form" action="/chooseAsoc" method="post">
-            @*@foreach (var asoc in (dynamic)ViewData["Associations"])
-        {
-            <input type="submit" class="page-item" class="page-link" name="assoc_name" disabled value=@asoc>
-        }*@
-            @for (int i = 0; i < ViewBag.AssNumber; i++)
-            {
-                <input type="submit"  name="assoc_name" value=@ViewBag.Association[i]>
-            }
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Nume</th>
+                        <th scope="col">Rol</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < ViewBag.AssNumber; i++)
+                    {
+                    <tr>
+                        <td><input type="submit" name="assoc_name" value=@ViewBag.Association[i]></td>
+                        <td bgcolor="green">@ViewBag.Roles[i]</td>
+                    </tr>
+                    }
+                    </tbody>
+            </table>
         </form>
     </div>
 </body>
