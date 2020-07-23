@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using HuntingAssociation.Models;
+using HuntingAssociation.Views.DTOs;
 
 namespace HuntingAssociation.Controllers
 {
@@ -21,6 +22,14 @@ namespace HuntingAssociation.Controllers
 
         [HttpPost("login")]
         public IActionResult Login(UserDTO u){
+            // Console.WriteLine(u.user_email);
+            // Console.WriteLine(u.user_pass);
+            
+            if(u.user_email=="admin@yahoo.com" && u.user_pass=="admin"){
+                    return RedirectToAction("Index","SysAdmin");
+            }
+
+            return Ok();
             
         }
         
