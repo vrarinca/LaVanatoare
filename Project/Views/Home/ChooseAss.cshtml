@@ -20,10 +20,6 @@
 
     <div>
         <form id="search-form" action="/chooseAsoc" method="post">
-            @*@foreach (var asoc in (dynamic)ViewData["Associations"])
-        {
-            <input type="submit" class="page-item" class="page-link" name="assoc_name" disabled value=@asoc>
-        }*@
             @for (int i = 0; i < ViewBag.AssNumber; i++)
             {
                 <input type="submit"  name="assoc_name" value=@ViewBag.Association[i]>
