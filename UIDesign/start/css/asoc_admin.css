@@ -1,0 +1,7 @@
+.nav-item:hover{
+    outline: 1px solid green;
+}
+
+#navbarNav{
+    padding-left: 100px;
+}

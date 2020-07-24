@@ -66,7 +66,7 @@
                 <div class="user-select-window">
                     <div class="user-select-window-top">
                         <div id="search-bar">
-                            <form class="form-inline my-2 my-lg-0" class="text-center" id="search-form" action="/findUserAsoc" method="post">
+                            <form class="form-inline my-2 my-lg-0" class="text-center" id="search-form" action="/AsocAdmin" method="get">
                                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="name" id="name">
                                 <button class="btn btn-outline-success my-2 my-sm-0 bar-button search-button" type="submit">Search</button>
                                 <button class="btn btn-outline-success my-2 my-sm-0 bar-button search-button">New user</button>
@@ -96,13 +96,40 @@
                     </table>
 
                     <nav aria-label="Page navigation example">
-                        <form class="text-center" id="switch_page_form" action="/switchPageAsoc" method="post">
-                            @*<input type="submit" class="page-item" class="page-link" name="page_nb" value="First">*@
-                            <input type="submit" class="page-item" class="page-link" name="page_nb" value="1">
-                            <input type="submit" class="page-item" class="page-link" name="page_nb" value="2">
-                            <input type="submit" class="page-item" class="page-link" name="page_nb" value="3">
-                            <input type="submit" class="page-item" class="page-link" value="...">
-                            <input type="submit" class="page-item" class="page-link" name="page_nb" value="Last">
+                        <form class="text-center" id="switch_page_form" action="/AsocAdmin" method="get">
+                            @if (ViewBag.CurrentPage == 1)
+                            {
+                                <input type="submit" class="page-item" class="page-link" name="page_nb" disabled value="First">
+                            }
+                            else
+                            {
+                                <input type="submit" class="page-item" class="page-link" name="page_nb" value="First">
+                            }
+
+
+                            @for (var i = @ViewBag.CurrentPage - 1; i < ViewBag.CurrentPage + 2; i++)
+                            {
+                                if (i > ViewBag.LastPage)
+                                {
+                                    break;
+                                }
+                                if (i > 0)
+                                {
+                                    <input type="submit" class="page-item" name="page_nb" class="page-link" value=@i>
+
+                                }
+
+
+                            }
+
+                            @if (ViewBag.CurrentPage == ViewBag.LastPage)
+                            {
+                                <input type="submit" class="page-item" class="page-link" name="page_nb" disabled value="Last">
+                            }
+                            else
+                            {
+                                <input type="submit" class="page-item" class="page-link" name="page_nb" value="Last">
+                            }
                         </form>
                     </nav>
 

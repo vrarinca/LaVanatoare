@@ -6,6 +6,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Library.Data;
 using Library.Data.Models;
+// using Library.Data.Models;
 using Library.Web.Models.Login;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -22,7 +23,6 @@ namespace Project.Controllers
         
         private readonly IUserService _repo;
         private readonly IAssociationService _assoc;
-        //private List<Claim> claims;
         public HomeController(IUserService repo, IAssociationService assoc){
             this._repo = repo;
             this._assoc = assoc;
@@ -157,19 +157,14 @@ namespace Project.Controllers
             }
             List<UserAssociation> associations = await _assoc.getAllUserAss(user.Id);
 
-            List<string> asocNames = new List<string>();
-            List<string> asocRoles = new List<string>();
-
-            foreach (UserAssociation uA in associations)
-            {
-                string name = await _assoc.getAssociationNameById(uA.Id);
-                string func = await _assoc.getFunctionNameById(uA.Id);
-                asocNames.Add(name);
-                asocRoles.Add(func);
-            }
-
             if (associations.Count != 1)
             {
+                List<string> asocNames = new List<string>();
+                foreach (UserAssociation uA in associations)
+                {
+                    string name = await _assoc.getAssociationNameById(uA.Id);
+                    asocNames.Add(name);
+                }
                 List<Claim> claimss = new List<Claim>
                 {
                 new Claim(ClaimTypes.Name, email_login),
@@ -188,9 +183,6 @@ namespace Project.Controllers
 
                 ViewBag.AssNumber = associations.Count;
                 ViewBag.Association = asocNames;
-                ViewBag.Roles = asocRoles;
-                
-
                 return View("ChooseAss");
             }
             int role = (int)associations[0].IdRole;

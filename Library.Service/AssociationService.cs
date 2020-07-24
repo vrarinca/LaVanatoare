@@ -45,12 +45,6 @@ namespace Library.Service
             return association.Name;
         }
 
-        public async Task<string> getFunctionNameById(int assocId)
-        {
-            UserFunction userFunction = await _context.UserFunction.FirstOrDefaultAsync(x => x.Id == assocId);
-            return userFunction.FunctionName;
-        }
-
         public IQueryable<Association> GetAssociations()
         {
             return _context.Association;
