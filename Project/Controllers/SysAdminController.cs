@@ -47,7 +47,6 @@ namespace Project.Controllers
                 for (int i = 0; i < users.Count; i++)
                 {
                     PrivateUser u1 = new Library.Data.Models.PrivateUser();
-                   // u1.Function = users[i].IdUserFunctionNavigation.FunctionName;
                     u1.Email = users[i].Email;
                     u1.Surname = users[i].Surname;
                     u1.Name = users[i].Name;
